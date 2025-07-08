@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hi Butkiii 💖</title>
+  <style>
+    body {
+      margin: 0;
+      background: #ffe6f0;
+      font-family: 'Comic Sans MS', cursive, sans-serif;
+      overflow: hidden;
+    }
+
+    .photo {
+      width: 200px;
+      height: 280px;
+      object-fit: cover;
+      object-position: top center;
+      border: 5px solid #ff66b2;
+      border-radius: 20px;
+      box-shadow: 0 0 20px rgba(255, 102, 178, 0.7);
+      display: block;
+      margin: 30px auto 10px;
+    }
+
+    .typewriter {
+      color: #ff4da6;
+      font-size: 2em;
+      text-align: center;
+      white-space: nowrap;
+      overflow: hidden;
+      border-right: 2px solid #ff4da6;
+      width: 0;
+      animation: typing 4s steps(40, end) forwards, blink .75s step-end infinite;
+    }
+
+    @keyframes typing {
+      from { width: 0; }
+      to { width: 100%; }
+    }
+
+    @keyframes blink {
+      50% { border-color: transparent; }
+    }
+
+    .message {
+      color: #cc0066;
+      font-size: 1.5em;
+      text-align: center;
+      margin-top: 10px;
+      animation: fadeIn 4s ease-in-out forwards;
+      opacity: 0;
+    }
+
+    @keyframes fadeIn {
+      to { opacity: 1; }
+    }
+
+    .button {
+      display: block;
+      margin: 30px auto;
+      padding: 12px 24px;
+      font-size: 1.2em;
+      color: white;
+      background-color: #ff66b2;
+      border: none;
+      border-radius: 20px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .button:hover {
+      background-color: #e60073;
+    }
+
+    .popup-message {
+      display: none;
+      text-align: center;
+      color: #ff3399;
+      font-size: 1.4em;
+      animation: fadeIn 1s ease forwards;
+    }
+
+    .heart {
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background: red;
+      transform: rotate(45deg);
+      animation: floatUp 6s linear infinite;
+    }
+
+    .heart::before,
+    .heart::after {
+      content: '';
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background: red;
+      border-radius: 50%;
+    }
+
+    .heart::before {
+      top: -10px;
+      left: 0;
+    }
+
+    .heart::after {
+      left: -10px;
+      top: 0;
+    }
+
+    @keyframes floatUp {
+      0% {
+        bottom: -20px;
+        opacity: 1;
+      }
+      100% {
+        bottom: 100vh;
+        opacity: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- 🖼️ New face-focused image -->
+  <img src="https://i.postimg.cc/BQMrkGkJ/Whats-App-Image-2025-07-08-at-13-25-44-4e8027e5.jpg" class="photo" alt="Butkiii Photo" />
+
+  <div class="typewriter">Heyy Diksha!!! 💖</div>
+  <div class="message">I love you sooo muchhh😚</div>
+
+  <button class="button" onclick="showPopup(); document.getElementById('bgmusic').play();">
+    Click here, My Butkiii 💗
+  </button>
+
+  <div class="popup-message" id="popup">
+    You're not just my gf you are my Love, my bestie, my life and hopefully my future wifee tooo ❤️<br>
+    I love you endlessly Sweetheart 💋💫
+  </div>
+
+  <!-- 🎶 Blue song -->
+  <audio id="bgmusic" loop>
+    <source src="https://media.vocaroo.com/mp3/184I7rW6bX7F" type="audio/mpeg">
+    Your browser does not support the audio tag.
+  </audio>
+
+  <script>
+    function createHeart() {
+      const heart = document.createElement('div');
+      heart.classList.add('heart');
+      heart.style.left = Math.random() * 100 + 'vw';
+      heart.style.animationDuration = 4 + Math.random() * 2 + 's';
+      document.body.appendChild(heart);
+      setTimeout(() => heart.remove(), 6000);
+    }
+    setInterval(createHeart, 500);
+
+    function showPopup() {
+      document.getElementById('popup').style.display = 'block';
+    }
+  </script>
+</body>
+</html>
